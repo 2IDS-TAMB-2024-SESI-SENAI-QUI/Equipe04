@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montador de Cadeias de Hidrocarbonetos</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 700px;
+            text-align: center;
+        }
+
+        #carbono-container, #ligacao-container {
+            margin: 20px 0;
+        }
+
+        .carbono, .ligacao {
+            display: inline-block;
+            background-color: whitesmoke;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 4px;
+            cursor: grab;
+        }
+
+        #area-montagem {
+            margin: 20px 0;
+        }
+
+        #dropzone {
+            min-height: 100px;
+            border: 2px dashed #ccc;
+            padding: 10px;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        #gerarNome {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #gerarNome:hover {
+            background-color: rgb(35, 29, 29);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Monte sua Cadeia de Hidrocarbonetos</h1>
+
+        <div id="carbono-container">
+            <h2>Carbonos</h2>
+            <div class="carbono" draggable="true" id="carbono1">C</div>
+            <div class="carbono" draggable="true" id="carbono2">C</div>
+            <div class="carbono" draggable="true" id="carbono3">C</div>
+            <div class="carbono" draggable="true" id="carbono4">C</div>
+        </div>
+
+        <div id="ligacao-container">
+            <h2>Tipos de Ligações</h2>
+            <div class="ligacao" draggable="true" id="ligacao1">-</div>
+            <div class="ligacao" draggable="true" id="ligacao2">=</div>
+            <div class="ligacao" draggable="true" id="ligacao3">≡</div>
+        </div>
+
+        <div id="area-montagem">
+            <h2>Arraste aqui</h2>
+            <div id="dropzone"></div>
+        </div>
+
+        <button id="gerarNome">Qual o Nome da Cadeia?</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script src="scriptMontagem.js"></script>
+</body>
+</html>
